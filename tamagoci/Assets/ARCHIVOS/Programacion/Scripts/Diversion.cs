@@ -60,7 +60,7 @@ public class Diversion : MonoBehaviour
 
     private void reductionRate(float multiplier)//reduce la barra de diversion segun multiplicador
     {
-        currentValue = currentValue - ((0.05f * speed) * multiplier);
+        currentValue = currentValue - ((0.07f * speed) * multiplier);
         UpdateBar();
     }
 
