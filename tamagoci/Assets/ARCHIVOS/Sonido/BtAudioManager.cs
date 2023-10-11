@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioManager : MonoBehaviour
+public class BtAudioManager : MonoBehaviour
 {
     public AudioClip backgroundMusic;
     public AudioClip configMusic;
@@ -49,10 +49,10 @@ public class AudioManager : MonoBehaviour
 
     public void EnterConfigMenu()
     {
-        backgroundMusicSource.volume = 0.3f; // Baja el volumen de la música de fondo
-        backgroundMusicSource.Pause(); // Pausa la música de fondo
+        backgroundMusicSource.volume = 0.3f; // Baja el volumen de la musica de fondo
+        backgroundMusicSource.Pause(); // Pausa la musica de fondo
 
-        // Reproduce la música de configuración
+        // Reproduce la musica de configuraciun
         audioSource.clip = configMusic;
         audioSource.Play();
 
@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.Stop();
 
-        // Continúa reproduciendo la música de fondo
+        // Continua reproduciendo la musica de fondo
         backgroundMusicSource.Play();
 
         isInConfigMenu = false;

@@ -57,7 +57,7 @@ public class Limpieza : MonoBehaviour
 
     private void reductionRate(float multiplier) //reduce la barra de limpieza segun multiplicador
     {
-        currentValue = currentValue - ((0.05f * speed) * multiplier);
+        currentValue = currentValue - ((0.06f * speed) * multiplier);
         UpdateBar();
     }
 
