@@ -793,18 +793,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248079340}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &138684373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1079,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248079340}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.05
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1581,7 +1569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &365634377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2496,8 +2484,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 620609365}
-  - component: {fileID: 620609364}
   - component: {fileID: 620609363}
+  - component: {fileID: 620609366}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -2601,18 +2589,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &620609364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620609362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e00e890cc0690f4a8df4543ab50e427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &620609365
 Transform:
   m_ObjectHideFlags: 0
@@ -2628,6 +2604,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &620609366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620609362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e00e890cc0690f4a8df4543ab50e427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 0}
+  configMusic: {fileID: 0}
+  buttons: []
+  audioClips: []
 --- !u!1 &649365013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +3305,7 @@ GameObject:
   - component: {fileID: 895983054}
   - component: {fileID: 895983053}
   - component: {fileID: 895983052}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3391,7 +3383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895983051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0972786, y: -4.7, z: 27.5}
+  m_LocalPosition: {x: -1.0972786, y: -7, z: 27.5}
   m_LocalScale: {x: 1091.902, y: 5.6412873, z: 724.9543}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4828,6 +4820,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: 312cf80a72766f44dadf6e6a8c903400, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: 312cf80a72766f44dadf6e6a8c903400, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 312cf80a72766f44dadf6e6a8c903400, type: 3}
       propertyPath: m_Name
       value: tennis_ball02
@@ -4836,7 +4836,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1853094968961178454, guid: 312cf80a72766f44dadf6e6a8c903400, type: 3}
+    - {fileID: -6722085885383957590, guid: 312cf80a72766f44dadf6e6a8c903400, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 312cf80a72766f44dadf6e6a8c903400, type: 3}
 --- !u!1 &1700690631
 GameObject:
