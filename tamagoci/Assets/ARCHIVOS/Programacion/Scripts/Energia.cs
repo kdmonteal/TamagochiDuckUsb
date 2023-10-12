@@ -69,18 +69,18 @@ public class Energia : MonoBehaviour
 
     private float StatusesMultiplier(){ //lee que tanto le queda de hambre y diversion
         float multiplier = 1.0f;
-        if(hungerScript.currentValue <=30){
-            multiplier += 0.3f;
+        /*if(hungerScript.currentValue <=30){
+            multiplier += 0.1f;
         }
         if(controlEstados.isPlaying){
-            multiplier += 0.5f;
-        }
+            multiplier += 0.2f;
+        }*/
 
         return multiplier; //devuelve un multiplicador
     }
 
     private void RecoverEnergy(){
-        currentValue = currentValue + ((0.04f * speed * 1.5f));
+        currentValue = currentValue + ((0.05f * speed * 1.5f));
     }
 
     private void UpdateBar(){
