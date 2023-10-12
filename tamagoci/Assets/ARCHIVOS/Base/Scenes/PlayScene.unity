@@ -1598,7 +1598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &365634377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2784,10 +2784,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e00e890cc0690f4a8df4543ab50e427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 0}
-  configMusic: {fileID: 0}
-  buttons: []
-  audioClips: []
+  backgroundMusic: {fileID: 8300000, guid: 71abb51be179af941b43ac596262e274, type: 3}
+  configMusic: {fileID: 8300000, guid: fa041013eb470eb4282f6a3d5572b0f4, type: 3}
+  buttons:
+  - {fileID: 271455650}
+  - {fileID: 138684372}
+  - {fileID: 512299465}
+  - {fileID: 1028973584}
+  - {fileID: 310376640}
+  audioClips:
+  - {fileID: 8300000, guid: 8680dd14ff02d3e43b594eca2579f28c, type: 3}
+  - {fileID: 8300000, guid: 7cd736a1e4b5faa4bb9b41d307519aa9, type: 3}
+  - {fileID: 8300000, guid: 7a054e566ebee2645aed092eabef0b4b, type: 3}
+  - {fileID: 8300000, guid: fbb577306ff68ba4dbd4f2c7277b3c05, type: 3}
+  - {fileID: 8300000, guid: 3c9cf4de8f5080c4985f73610a19d6b8, type: 3}
 --- !u!1 &649365013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,7 +4257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1210300737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5316,7 +5326,7 @@ MonoBehaviour:
   hungerObject: {fileID: 2105125485}
   energyObject: {fileID: 829442315}
   ghostDuck: {fileID: 1100169806}
-  speed: 1
+  illSpeed: 1
   currentValue: 0
 --- !u!1 &1711262594
 GameObject:
