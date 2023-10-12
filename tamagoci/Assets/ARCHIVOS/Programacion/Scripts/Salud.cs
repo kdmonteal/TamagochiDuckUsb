@@ -43,7 +43,6 @@ public class Salud : MonoBehaviour
     void FixedUpdate()
     {
         delay++;
-        
 
         if(delay == WAITFRAMES)
         {
@@ -74,9 +73,7 @@ public class Salud : MonoBehaviour
     private void GetSick(float multiplier) //reduce la barra de energia segun multiplicador
     {
         currentValue = currentValue + ((0.02f * speed) * multiplier);
-
     }
-
 
     private float StatusesMultiplier(){ //lee que tanto le queda de hambre y diversion
         float multiplier = 1.0f;
