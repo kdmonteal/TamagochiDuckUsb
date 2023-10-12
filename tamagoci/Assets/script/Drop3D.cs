@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Drop3D : MonoBehaviour
 {
+    GameObject statusManager;
+    ControlEstados controlEstados;
+
+
     bool isDrag;
     Transform focus;
     Camera cam;
@@ -14,6 +18,8 @@ public class Drop3D : MonoBehaviour
 
     void Start()
     {
+        statusManager = GameObject.Find("EventSystem");  
+        controlEstados = statusManager.GetComponent<ControlEstados>();
         isDrag = false;
         cam = Camera.main;
     }
@@ -25,6 +31,8 @@ public class Drop3D : MonoBehaviour
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray.origin, ray.direction, out hit))
             {
+                controlEstados.isPlaying = true;
+                
                 focus = hit.collider.transform;
                 print("click = "+focus.name);
 
@@ -32,10 +40,13 @@ public class Drop3D : MonoBehaviour
                 offset = focus.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPos.z));
                 isDrag = true;
             }
+
         }
         else if(Input.GetMouseButtonUp(0) && isDrag == true)
         {
-            isDrag = false;
+            isDrag = false;      
+            controlEstados.isPlaying = false;
+            
         }
         else if (isDrag == true)
         {
@@ -44,5 +55,6 @@ public class Drop3D : MonoBehaviour
 
             focus.position = currentPos;
         }
+
     }
 }
