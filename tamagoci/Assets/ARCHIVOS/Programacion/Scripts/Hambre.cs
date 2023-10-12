@@ -92,4 +92,21 @@ public class Hambre : MonoBehaviour
         //hungerText.text = (Mathf.Ceil(currentValue)).ToString();
         slider.value = ((Mathf.Ceil(currentValue)));
     }
+    
+    
+    public void Eat()
+    {
+        if(currentValue < 70)
+        {
+            currentValue += 30;
+
+        }
+        else
+        {
+            currentValue = 100;
+        }
+    }
+
 }
+
+   

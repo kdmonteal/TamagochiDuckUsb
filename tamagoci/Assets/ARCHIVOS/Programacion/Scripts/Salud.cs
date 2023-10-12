@@ -12,6 +12,7 @@ public class Salud : MonoBehaviour
     public GameObject cleannessObject;
     public GameObject hungerObject;
     public GameObject energyObject;
+    public GameObject ghostDuck;
 
 
     GameObject statusManager;  
@@ -22,7 +23,7 @@ public class Salud : MonoBehaviour
     Energia energyScript;
     Limpieza cleanScript;
     
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float illSpeed = 1f;
     [HideInInspector] public float currentValue = 0f;
     private int delay = 0; //espera x frames
 
@@ -58,45 +59,67 @@ public class Salud : MonoBehaviour
             if(currentValue > MINVALUE)
             {
                 HealOverTime();
-            }                   
+            }
         }
         else 
         {  
             if(currentValue < MAXVALUE)
             {
                 GetSick(StatusesMultiplier());
-            }            
+            }     
+            else
+            {
+                InduceDeath();
+            }       
         }
         UpdateBar();
     }
 
     private void GetSick(float multiplier) //reduce la barra de energia segun multiplicador
     {
-        currentValue = currentValue + ((0.02f * speed) * multiplier);
+        currentValue = currentValue + ((0.02f * illSpeed) * multiplier);
     }
 
     private float StatusesMultiplier(){ //lee que tanto le queda de hambre y diversion
         float multiplier = 1.0f;
         if(hungerScript.currentValue <=5){
-            multiplier += 1.3f;
+            multiplier += 2.3f;
         }
         if(energyScript.currentValue <= 1){
-            multiplier += 0.8f;
+            multiplier += 1.8f;
         }
         if(cleanScript.currentValue <= 10){
-            multiplier += 1.0f;
+            multiplier += 2.0f;
         }
 
-        Debug.Log(multiplier);
+        //Debug.Log(multiplier);
 
         return multiplier; //devuelve un multiplicador
     }
 
     private void HealOverTime(){
-        currentValue = currentValue - ((0.015f * speed));
+        currentValue = currentValue - ((0.01f * illSpeed));
     }
 
     private void UpdateBar(){
         slider.value = ((Mathf.Floor(currentValue)));
+    }
+
+    public void Cure()
+    {
+        if(currentValue > 30)
+        {
+            currentValue -= 30;
+
+        }
+        else
+        {
+            currentValue = 0;
+        }
+    }
+
+    void InduceDeath()
+    {
+        ghostDuck.SetActive(true);
     }
 }
